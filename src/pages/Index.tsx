@@ -1,4 +1,5 @@
 import { Globe, Mountain, Users, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -28,6 +29,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Admin Link */}
+      <div className="absolute top-4 right-4 z-10">
+        <Link 
+          to="/admin/news" 
+          className="text-white bg-earth hover:bg-earth/80 px-4 py-2 rounded-md transition-colors"
+        >
+          News Admin
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-earth to-forest text-white">
         <div className="absolute inset-0 bg-black/40"></div>
