@@ -15,6 +15,8 @@ export default {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         earth: {
           DEFAULT: "#4A3B27",
           light: "#8A7355"
