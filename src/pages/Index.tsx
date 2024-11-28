@@ -134,7 +134,7 @@ const Index = () => {
 
       {/* Contact Section */}
       <section className="py-20 bg-earth text-white">
-        <div className="container">
+        <div className="container relative">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
             <p className="text-xl">Let's discuss how we can work together</p>
@@ -159,6 +159,16 @@ const Index = () => {
                 Send Message
               </button>
             </div>
+          </div>
+          
+          {/* Ecobank Support */}
+          <div className="absolute left-4 bottom-4 flex items-center gap-2">
+            <img 
+              src="/lovable-uploads/1a0e4b98-6766-4606-a441-b17b5b5e198f.png" 
+              alt="Ecobank Logo" 
+              className="h-8 object-contain"
+            />
+            <span className="text-sm text-white/80">Supported by Ecobank</span>
           </div>
         </div>
       </section>
