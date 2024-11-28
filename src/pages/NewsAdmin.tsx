@@ -40,6 +40,18 @@ const NewsAdmin = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentNews = mockNews.slice(startIndex, startIndex + itemsPerPage);
 
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(p => p - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(p => p + 1);
+    }
+  };
+
   return (
     <div className="container mx-auto py-8">
       <div className="flex justify-between items-center mb-8">
@@ -81,8 +93,8 @@ const NewsAdmin = () => {
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious 
-                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                  disabled={currentPage === 1}
+                  onClick={handlePreviousPage}
+                  className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
                 />
               </PaginationItem>
               {Array.from({ length: totalPages }, (_, i) => (
@@ -97,8 +109,8 @@ const NewsAdmin = () => {
               ))}
               <PaginationItem>
                 <PaginationNext
-                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                  disabled={currentPage === totalPages}
+                  onClick={handleNextPage}
+                  className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
                 />
               </PaginationItem>
             </PaginationContent>
