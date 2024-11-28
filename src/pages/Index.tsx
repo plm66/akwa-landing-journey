@@ -1,6 +1,31 @@
 import { Globe, Mountain, Users, MapPin } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
+  const images = [
+    {
+      src: "/lovable-uploads/e3599fe2-d54a-4627-98d2-676384178414.png",
+      alt: "Mining Equipment",
+      caption: "State-of-the-art Mining Equipment"
+    },
+    {
+      src: "/lovable-uploads/f010f17b-b1e4-4c84-a60d-8f33c1c93ef9.png",
+      alt: "Rock Cycle Diagram",
+      caption: "Understanding the Rock Cycle"
+    },
+    {
+      src: "/lovable-uploads/24d6ff50-02ec-4278-b0fb-e5a2d3db94d2.png",
+      alt: "Akwa Mining Worker",
+      caption: "Our Dedicated Team"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -13,6 +38,35 @@ const Index = () => {
           <p className="text-2xl md:text-3xl mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             From The Land To People
           </p>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-earth text-center mb-16">
+            Our Operations
+          </h2>
+          <Carousel className="max-w-4xl mx-auto">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-[500px] object-cover rounded-lg"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4 text-white rounded-b-lg">
+                      <p className="text-center text-lg">{image.caption}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
         </div>
       </section>
 
