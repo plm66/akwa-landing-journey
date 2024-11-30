@@ -1,4 +1,4 @@
-import { Globe, Mountain, Users, MapPin } from "lucide-react";
+import { Globe, Mountain, Users, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const images = [
@@ -49,6 +50,14 @@ const Index = () => {
           <p className="text-2xl md:text-3xl mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             From The Land To People
           </p>
+          <Button 
+            size="lg"
+            className="bg-gold hover:bg-gold-light text-earth animate-fade-up"
+            style={{ animationDelay: "0.4s" }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Get Started Today <ArrowRight className="ml-2" />
+          </Button>
         </div>
       </section>
 
@@ -81,7 +90,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section with CTA */}
       <section className="py-20 bg-stone-50">
         <div className="container">
           <h2 className="text-4xl font-bold text-earth text-center mb-16">
@@ -92,6 +101,12 @@ const Index = () => {
               <p className="text-lg text-gray-700">
                 At Akwa Mining, we believe in responsible resource extraction that benefits both the land and its people. Operating in the Democratic Republic of Congo, we combine modern mining practices with sustainable development to create lasting value for our communities.
               </p>
+              <Button 
+                className="bg-forest hover:bg-forest-light text-white mt-4"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Partner With Us <ArrowRight className="ml-2" />
+              </Button>
             </div>
             <div className="bg-earth/10 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-earth mb-6">Our Values</h3>
@@ -114,37 +129,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section with CTAs */}
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 text-center">
-              <Mountain className="h-12 w-12 mx-auto mb-4 text-earth" />
+            <div className="p-6 text-center group hover:bg-earth/5 rounded-lg transition-colors">
+              <Mountain className="h-12 w-12 mx-auto mb-4 text-earth group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold mb-3">Sustainable Mining</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-4">
                 Using advanced techniques to minimize environmental impact
               </p>
+              <Button variant="outline" className="mt-2">Learn More</Button>
             </div>
-            <div className="p-6 text-center">
-              <Users className="h-12 w-12 mx-auto mb-4 text-earth" />
+            <div className="p-6 text-center group hover:bg-earth/5 rounded-lg transition-colors">
+              <Users className="h-12 w-12 mx-auto mb-4 text-earth group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold mb-3">Community First</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-4">
                 Creating opportunities and supporting local development
               </p>
+              <Button variant="outline" className="mt-2">Join Us</Button>
             </div>
-            <div className="p-6 text-center">
-              <Globe className="h-12 w-12 mx-auto mb-4 text-earth" />
+            <div className="p-6 text-center group hover:bg-earth/5 rounded-lg transition-colors">
+              <Globe className="h-12 w-12 mx-auto mb-4 text-earth group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold mb-3">Global Impact</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-4">
                 Contributing to the global resource supply chain
               </p>
+              <Button variant="outline" className="mt-2">Discover More</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-earth text-white">
+      <section id="contact" className="py-20 bg-earth text-white">
         <div className="container relative">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
@@ -166,9 +184,9 @@ const Index = () => {
                 rows={4}
                 className="w-full p-3 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-gold"
               ></textarea>
-              <button className="w-full py-3 px-6 bg-gold hover:bg-gold-light text-earth font-bold rounded transition-colors">
-                Send Message
-              </button>
+              <Button className="w-full py-3 px-6 bg-gold hover:bg-gold-light text-earth font-bold rounded transition-colors">
+                Send Message <ArrowRight className="ml-2" />
+              </Button>
             </div>
           </div>
           
